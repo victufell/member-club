@@ -1,0 +1,19 @@
+.mc-header {
+    display: flex;
+    justify-content: center;
+    padding-block: 32px 16px;
+    
+}
+
+.mc-header__logo {
+    width: 99.43px;
+    max-height: 48px;
+    object-fit: contain;
+}
+
+@media (width > 980px) {
+    .mc-header__logo {
+        width: 116px;
+        max-height: 56px;
+    }
+}
