@@ -14,7 +14,7 @@
     padding: 2px;
     display: flex;
     border-radius: 10px;
-    background: linear-gradient(45deg, #AF74DE, #6B84DE, #5DCAB7, #45B442, #5EC6B9, #698DD9, #B173DC, #D658B3, #D658B3);
+    background: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%);
 }
 
 .mc-profile__image-wrapper::after {

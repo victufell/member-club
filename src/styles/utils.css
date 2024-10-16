@@ -1,0 +1,52 @@
+.ds-container {
+    max-width: 375px;
+    padding-inline: 12px;
+    margin: 0 auto;
+}
+
+.ds__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--base-gray-600);
+
+}
+
+.ds__subtitle {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--base-gray-500);
+}
+
+.ds__description {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: var(--base-gray-500);
+}
+
+.ds__box {
+    background-color: var(--base-gray-100);
+    border: 1px solid var(--base-gray-200);
+    border-radius: 16px;
+}
+
+.ds__box--sm {
+    padding: 16px;
+}
+
+.ds__box--md {
+    padding: 24px;
+}
+
+
+@media (width > 980px) {
+    .ds-container {
+        max-width: 912px;
+    }
+
+    .ds__box--md {
+        padding: 36px;
+    }
+}
