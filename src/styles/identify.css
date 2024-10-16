@@ -4,6 +4,7 @@
 
     border: none;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .mc-identify__input {
@@ -52,6 +53,12 @@
 }
 
 @media (width > 980px) {
+    .mc-identify__wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+        margin: 32px auto 64px auto;
+    }
+
     .mc-identify__input {
         max-width: 400px;
     }
