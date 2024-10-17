@@ -1,0 +1,40 @@
+.mc-resume {
+
+}
+
+.mc-resume__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--base-gray-200);
+}
+
+.mc-resume__items {
+
+}
+
+.mc-resume__items__item {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:first-child {
+        margin-top: 14px;
+    }
+}
+
+.mc-resume__items__item-image-wrapper {
+    border-radius: 50%;
+    padding: 5.5px;
+    background: rgba(69, 180, 66, 0.12);
+    display: flex;
+    align-items: center;
+}
+
+.mc-resume__items__item-image-wrapper > img {
+    max-width: 21px;
+    width: 100%;
+    object-fit: contain;
+}

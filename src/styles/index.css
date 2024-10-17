@@ -8,10 +8,15 @@
 @import url("./profile.css");
 @import url("./fidelity.css");
 @import url("./progress.css");
+@import url("./resume.css");
 
 
 body {
     height: 100%;
     font-family: "Oxygen", sans-serif;
     background-color: var(--base-gray-200);
+}
+
+.member-club-app {
+    padding-bottom: 24px;
 }
