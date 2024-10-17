@@ -23,7 +23,7 @@
 .mc-fidelity__items {
     display: grid;
     gap: 8px;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 56px);
     align-items: center;
     justify-content: center;
 
