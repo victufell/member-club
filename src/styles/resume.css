@@ -1,7 +1,3 @@
-.mc-resume {
-
-}
-
 .mc-resume__header {
     display: flex;
     align-items: center;
@@ -11,7 +7,8 @@
 }
 
 .mc-resume__items {
-
+    overflow-y: scroll;
+    max-height: 360px;
 }
 
 .mc-resume__items__item {
@@ -37,4 +34,11 @@
     max-width: 21px;
     width: 100%;
     object-fit: contain;
+}
+
+
+@media (width > 980px) {
+    .mc-resume {
+        grid-area: C;
+    }
 }

@@ -46,16 +46,29 @@
 }
 
 @media (width > 980px) {
+    .mc-fidelity {
+        grid-area: B;
+        margin-top: 0;
+    }
+    
     .mc-fidelity__header {
         margin-bottom: 32px;
+        justify-content: space-between;
     }
 
     .mc-fidelity__items {
         gap: 16px;
+        grid-template-columns: repeat(5, 88px);
+        justify-content: flex-start;
     }
 
     .mc-fidelity__items-item {
         width: 88px;
         height: 88px;
+
+        > img {
+            width: 40px;
+            height: 40px;
+        }
     }
 }

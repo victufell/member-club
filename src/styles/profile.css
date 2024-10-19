@@ -38,3 +38,11 @@
 .mc-profile__name {
     margin-bottom: 4px;
 }
+
+/* Desktop */
+
+@media (width > 980px) {
+    .mc-profile {
+        grid-area: A;
+    }
+}
