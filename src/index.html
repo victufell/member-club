@@ -40,15 +40,16 @@
             <section class="mc-profile ds__box ds__box--sm">
                 <div class="mc-profile__image-wrapper">
                     <img 
-                    src="./assets/profile.png"
-                    alt="Foto de perfil"
-                    class="mc-profile__avatar"
+                        src="./assets/profile.png"
+                        alt="Foto de perfil"
+                        class="mc-profile__avatar"
+                        data-profile="avatar"
                 />
                 </div>
                 
                 <div>
-                    <p class="ds__title mc-profile__name">Natália Miranda</p>
-                    <p class="ds__description mc-profile__date">Cliente desde 18/09/2023</p>
+                    <p class="ds__title mc-profile__name" data-profile="name"></p>
+                    <p class="ds__description mc-profile__date" data-profile="date"></p>
                 </div>
             </section>
     
@@ -58,55 +59,36 @@
                         <p class="ds__subtitle mc-fidelity__header-subtitle">CARTÃO FIDELIDADE</p>
                         <p class="ds__description mc-fidelity__header-description">Ao fazer cortes de cabelo, o décimo sai de graça!</p>
                     </div>
-                    <p class="ds__subtitle mc-fidelity__header-user-id">ID: 124-537-835-230</p>
+                    <p 
+                        data-fidelity="ID"
+                        class="ds__subtitle mc-fidelity__header-user-id"
+                    >
+                        
+                    </p>
                 </div>
     
-                <ul class="mc-fidelity__items">
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-check-with-bg.svg" />
-                    </li>
-                    <li class="mc-fidelity__items-item">
-                        <img src="./assets/ic-gift-disabled.svg" />
-                    </li>
+                <ul class="mc-fidelity__items" data-fidelity="items">
                 </ul>
             </section>
     
             <section class="mc-progress ds__box ds__box--md">
                 <div>
                     <p class="ds__description">
-                        <span class="ds__title">3</span>
+                        <span class="ds__title" data-progress="amount"></span>
                         cortes restantes
                     </p>
     
                     <div class="mc-progress__wrapper-bar">
-                        <div class="mc-progress__wrapper-bar__progress-bar">
-                            <span></span>
+                        <div 
+                            class="mc-progress__wrapper-bar__progress-bar"
+                        >
+                            <span data-progress="progressBar"></span>
                         </div>
-                        <p class="ds__description mc-progress__wrapper-bar__steps">7 de 10</p>
+                        <p 
+                            data-progress="steps"
+                            class="ds__description mc-progress__wrapper-bar__steps"
+                        >
+                        </p>
                     </div>
                 </div>
     

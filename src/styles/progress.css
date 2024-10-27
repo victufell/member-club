@@ -29,7 +29,6 @@
 }
 
 .mc-progress__wrapper-bar__progress-bar > span {
-    width: 80%;
     position: absolute;
     height: 8px;
     background: linear-gradient(90deg, #2DAA6E 0%, #2DAAAA 33.33%, #856CCF 66.67%, #D658B3 100%);
