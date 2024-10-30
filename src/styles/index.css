@@ -30,7 +30,7 @@ body {
 }
 
 @media (width > 980px) {
-    .member-club-app__data {
+    .member-club-app__data--active {
         display: grid;
         grid-template-areas: 
             "A B B B"
