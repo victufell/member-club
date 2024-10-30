@@ -1,6 +1,6 @@
-import handleView from "./view";
-
 const BASE_URL = "http://localhost:3000"
+
+import handleView from "./view";
 
 import Client from "../types/Client";
 
@@ -19,47 +19,85 @@ const handleGetClientByID = (clientID: string, clients: Client[]): Client | null
     return clients.find(({ id }) => clientID === id) || null;
 };
 
-const identifyModule = () => {
-   
-    const buttonEnterId = document.querySelector<HTMLButtonElement>('#btn-enter-id')
-    const inputIdentify = document.querySelector<HTMLInputElement>('[data-identify="user-id"]')
+const handleRequestByUserInput = async (inputIdentify: HTMLInputElement): Promise<Client | null> => {
+    const clientID: string = inputIdentify?.value.trim() ?? "";
 
-    const handleRequestByUserInput = async (): Promise<Client | null> => {
-        const clientID: string = inputIdentify?.value ?? ""
-
-        return new Promise(async (resolve, reject) => {
-            const clients: Client[] = await handleGetClients()
-            const client: Client | null = handleGetClientByID(clientID, clients)
-            
-            if (client) {
-                resolve(client)
-            } else {
-                alert(`Ocorreu um erro ao tentar localizar o usuário com ID: ${clientID}`)
-                reject(null)
-            }
-        })
-        
+    if (!clientID) {
+        alert("Por favor, insira um ID válido.");
+        return null;
     }
 
-    const handleInputChange = (element: Event) => {
-        const target = element.target as HTMLInputElement
-        const inputValue = target.value
-        const valueReplaced = inputValue.replace(/[A-Z]/gi, '')
-        
-        if (valueReplaced) {  
-            target.value = valueReplaced
-            buttonEnterId?.removeAttribute('disabled')
+    try {
+        const clients = await handleGetClients();
+        const client = handleGetClientByID(clientID, clients);
+
+        if (client) {
+            return client;
         } else {
-            buttonEnterId?.setAttribute('disabled', 'true')
+            alert(`Usuário com ID ${clientID} não encontrado.`);
+            return null;
+        }
+    } catch (error) {
+        alert("Erro ao processar a solicitação. Consulte o atendimento.");
+        return null;
+    }
+};
+
+const handleInputChange = (element: Event, buttonEnterId: HTMLButtonElement) => {
+    const target = element.target as HTMLInputElement
+    const inputValue = target.value
+    const valueReplaced = inputValue.replace(/[A-Z]/gi, '')
+
+    if (valueReplaced) {
+        target.value = valueReplaced
+        buttonEnterId?.removeAttribute('disabled')
+    } else {
+        buttonEnterId?.setAttribute('disabled', 'true')
+    }
+}
+
+const handleInitIdentify = () => {
+    const buttonEnterId = document.querySelector<HTMLButtonElement>('#btn-enter-id');
+    const inputIdentify = document.querySelector<HTMLInputElement>('[data-identify="user-id"]');
+
+    if (!buttonEnterId || !inputIdentify) {
+        console.warn("Erro no carregamento da DOM...");
+        return;
+    }
+
+    const handleButtonClick = async () => {
+        buttonEnterId.setAttribute('disabled', 'true')
+
+        try {
+            const client = await handleRequestByUserInput(inputIdentify);
+            
+            if (client) {
+                buttonEnterId.removeAttribute('disabled')
+                handleView(client)
+            }
+ 
+         } catch (error) {
+             console.error("Erro ao tentar exibir o cliente:", error);
+             throw error;
+         }
+    };
+
+    const handleKeyValidation = (e: KeyboardEvent) => {
+        const key = e.key
+        
+        if (key?.trim()?.toLowerCase() === 'enter') {
+            handleButtonClick()
         }
     }
 
-    buttonEnterId?.addEventListener('click', async () => {
-        const client = await handleRequestByUserInput()
-        handleView(client)
-        
-    })
-    inputIdentify?.addEventListener('input', handleInputChange)
-}
+    const handleInputChangeEvent = (e: Event) => {
+        handleInputChange(e, buttonEnterId)
+    };
 
-export default identifyModule
+    buttonEnterId.addEventListener('click', handleButtonClick);
+    inputIdentify.addEventListener('input', handleInputChangeEvent);
+    inputIdentify.addEventListener('keypress', handleKeyValidation);
+
+};
+
+export default handleInitIdentify

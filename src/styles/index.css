@@ -21,6 +21,14 @@ body {
     padding-bottom: 24px;
 }
 
+.member-club-app__data {
+    display: none;
+}
+
+.member-club-app__data--active {
+    display: block;
+}
+
 @media (width > 980px) {
     .member-club-app__data {
         display: grid;

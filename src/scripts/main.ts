@@ -1,5 +1,5 @@
-import "../styles/index.css"
+import "../styles/index.css";
 
-import identifyModule from "./identify"
+import handleInitIdentify from "./identify";
 
-identifyModule()
+handleInitIdentify()
