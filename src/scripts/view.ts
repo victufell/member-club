@@ -127,7 +127,6 @@ const handleShowView = (client: Client | null) => {
 }
 
 const handleView = (client: Client | null) => {
-    console.log({client})
     if (!client || !client.id) {
         console.warn("Client data is invalid or ID is missing.");
         return;
