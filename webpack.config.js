@@ -7,11 +7,11 @@ module.exports = {
   entry: './src/scripts/main.ts',
   watch: true,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js'
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'docs'),
     compress: true,
     port: 8081,
     hot: true,
@@ -46,7 +46,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets', to: 'dist/assets' },  // Copy from src/assets to dist/assets
+        { from: 'src/assets', to: 'assets' },
       ],
     }),
   ]
